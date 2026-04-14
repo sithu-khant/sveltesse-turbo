@@ -63,6 +63,14 @@ export const config = defineConfig(
     extends: ['markdown/recommended']
   },
 
+  stylistic.configs.recommended,
+  stylistic.configs.customize({
+    indent: 2,
+    quotes: 'single',
+    semi: true,
+    commaDangle: 'never'
+  }),
+
   {
     rules: {
       'no-debugger': 'warn',
@@ -71,27 +79,7 @@ export const config = defineConfig(
       '@typescript-eslint/no-unused-vars': [
         'off',
         { argsIgnorePattern: '^_' }
-      ],
-      '@stylistic/no-tabs': ['warn', { allowIndentationTabs: false }],
-      '@stylistic/no-mixed-spaces-and-tabs': ['warn', 'smart-tabs'],
-      '@stylistic/indent': ['warn', 2],
-      '@stylistic/semi': ['warn', 'always'],
-      '@stylistic/no-extra-semi': 'warn',
-      '@stylistic/quotes': [
-        'warn',
-        'single',
-        { avoidEscape: true }
-      ],
-      '@stylistic/comma-dangle': ['warn', 'never'],
-      '@stylistic/eol-last': ['warn', 'always'],
-      '@stylistic/no-multiple-empty-lines': [
-        'warn',
-        {
-          max: 1,
-          maxEOF: 1
-        }
-      ],
-      '@stylistic/no-trailing-spaces': 'warn'
+      ]
     }
   }
 );

@@ -23,10 +23,10 @@ export default [
       'svelte/html-quotes': [
         'warn',
         {
-          'prefer': 'single',
-          'dynamic': {
-            'quoted': true,
-            'avoidInvalidUnquotedInHTML': true
+          prefer: 'single',
+          dynamic: {
+            quoted: true,
+            avoidInvalidUnquotedInHTML: true
           }
         }
       ],
@@ -41,9 +41,9 @@ export default [
       'svelte/button-has-type': [
         'error',
         {
-          'button': true,
-          'submit': true,
-          'reset': true
+          button: true,
+          submit: true,
+          reset: true
         }
       ]
     }
