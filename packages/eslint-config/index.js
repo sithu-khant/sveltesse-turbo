@@ -72,6 +72,8 @@ export const config = defineConfig(
         'off',
         { argsIgnorePattern: '^_' }
       ],
+      '@stylistic/no-tabs': ['warn', { allowIndentationTabs: false }],
+      '@stylistic/no-mixed-spaces-and-tabs': ['warn', 'smart-tabs'],
       '@stylistic/indent': ['warn', 2],
       '@stylistic/semi': ['warn', 'always'],
       '@stylistic/no-extra-semi': 'warn',
