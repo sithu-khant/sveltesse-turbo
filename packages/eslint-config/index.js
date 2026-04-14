@@ -13,10 +13,7 @@ export const config = defineConfig(
     files: ['**/*.js', '**/*.mjs']
   },
 
-  ...tseslint.configs.recommended.map((config) => ({
-    ...config,
-    files: ['**/*.{ts}']
-  })),
+  ...tseslint.configs.recommended,
 
   {
     ignores: ['.turbo', '**/.svelte-doctor', '**/.svelte-kit', '**/.wrangler', '**/worker-configuration.d.ts']

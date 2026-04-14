@@ -36,9 +36,6 @@ importers:
         specifier: ^4.12.12
         version: 4.12.12
     devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
