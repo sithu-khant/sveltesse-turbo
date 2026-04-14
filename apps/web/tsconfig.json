@@ -1,0 +1,7 @@
+{
+	"extends": ["@repo/typescript-config/svelte.json", "./.svelte-kit/tsconfig.json"],
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"types": ["./worker-configuration.d.ts"]
+	}
+}
