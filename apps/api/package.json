@@ -4,9 +4,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
-    "gen": "wrangler types --env-interface CloudflareBindings",
-    "lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+    "gen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
     "hono": "^4.12.12"
