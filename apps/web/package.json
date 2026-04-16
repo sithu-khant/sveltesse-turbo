@@ -1,17 +1,23 @@
 {
-  "name": "web",
+  "name": "@repo/web",
   "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "svelte-kit sync && vite build",
-    "preview": "vite preview",
+    "preview": "pnpm run build && wrangler dev",
+    "deploy:dev": "pnpm run build && wrangler --env dev deploy",
+    "deploy:prod": "pnpm run build --mode prod && wrangler --env prod deploy",
+    "secret:bulk:dev": "wrangler --env dev secret bulk .env.local",
+    "secret:bulk:prod": "wrangler --env prod secret bulk .env.prod",
     "check-types": "tsc --noEmit",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "doctor:check": "pnpm dlx svelte-doctor check",
+    "check": "pnpm dlx svelte-check-rs",
+    "check:watch": "pnpm dlx svelte-check-rs --watch",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "gen": "wrangler types"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -28,6 +34,7 @@
     "tslib": "^2.8.1",
     "typescript": "5.9.3",
     "typescript-eslint": "^8.57.1",
-    "vite": "^8.0.1"
+    "vite": "^8.0.1",
+    "wrangler": "^4.82.2"
   }
 }
