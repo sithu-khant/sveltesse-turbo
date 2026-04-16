@@ -2,5 +2,27 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "server",
   "main": "src/index.ts",
-  "compatibility_date": "2026-04-14"
+  "compatibility_date": "2026-04-14",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_als"
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "env": {
+    "dev": {
+      "name": "sveltesse-turbo-dev",
+      "workers_dev": true
+    },
+    "prod": {
+      "name": "sveltesse-turbo-prod",
+      "route": "sveltesse-turbo-prod.com",
+      "workers_dev": false
+    }
+  }
 }
