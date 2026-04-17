@@ -1,8 +1,24 @@
 <script lang='ts'>
+  import { onMount } from 'svelte';
+
+  import { rpc } from '../libs/rpc';
+
+  let text = $state<string>('');
+
+  onMount(async () => {
+    try {
+      console.log('Mounted...');
+      const res = await rpc.index.$get();
+      const { message } = await res.json();
+
+      text = message;
+    }
+    catch (e) {
+      console.error(e);
+    }
+  });
 </script>
 
 <h1>Web</h1>
 
-<p>
-  Visit <a href='https://kit.svelte.dev'>kit.svelte.dev</a> to read the documentation
-</p>
+<p>text: {text}</p>

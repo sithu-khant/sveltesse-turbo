@@ -2,6 +2,7 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 import { Scalar } from '@scalar/hono-api-reference';
 import { config } from 'dotenv';
 import { expand } from 'dotenv-expand';
+import { cors } from 'hono/cors';
 import { requestId } from 'hono/request-id';
 import { pinoLogger } from 'hono-pino';
 import { notFound, onError, serveEmojiFavicon } from 'stoker/middlewares';
@@ -19,15 +20,22 @@ expand(config());
 const app = new OpenAPIHono({
   strict: false,
   defaultHook
-})
-  .route('/', indexRoute);
+});
 
+app.use('*',
+  cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+  }));
 app.use(serveEmojiFavicon('🔥'));
 app.use(requestId());
 app.use(pinoLogger());
 
 app.notFound(notFound);
 app.onError(onError);
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const routes = app.route('/', indexRoute);
 
 app.doc('/doc', {
   openapi: '3.0.0',
@@ -44,5 +52,7 @@ app.get('/scalar', Scalar({
     clientKey: 'fetch'
   }
 }));
+
+export type ApiType = typeof routes;
 
 export default app;
