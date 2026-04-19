@@ -5,6 +5,10 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "web:deploy:dev": "pnpm --filter @repo/web run deploy:dev",
+    "web:deploy:prod": "pnpm --filter @repo/web run deploy:prod",
+    "api:deploy:dev": "pnpm --filter @repo/api run deploy:dev",
+    "api:deploy:prod": "pnpm --filter @repo/api run deploy:prod",
     "husky": "husky",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

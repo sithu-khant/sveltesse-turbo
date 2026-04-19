@@ -24,7 +24,7 @@ const app = new OpenAPIHono({
 
 app.use('*',
   cors({
-    origin: 'http://localhost:5173',
+    origin: ['https://sveltesse-turbo-dev.sithukhant.workers.dev', 'http://localhost:5173'],
     credentials: true
   }));
 app.use(serveEmojiFavicon('🔥'));
