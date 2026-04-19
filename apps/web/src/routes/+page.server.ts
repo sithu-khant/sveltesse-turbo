@@ -1,4 +1,5 @@
-import { rpc } from '../libs/rpc';
+import { rpc } from '~/libs/rpc';
+
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

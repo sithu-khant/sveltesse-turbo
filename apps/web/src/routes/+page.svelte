@@ -1,7 +1,8 @@
 <script lang='ts'>
   import { onMount } from 'svelte';
 
-  import { rpc } from '../libs/rpc';
+  import { rpc } from '~/libs/rpc';
+
   import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();
