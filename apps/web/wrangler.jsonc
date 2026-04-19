@@ -20,7 +20,13 @@
   "env": {
     "dev": {
       "name": "sveltesse-turbo-dev",
-      "workers_dev": true
+      "workers_dev": true,
+      "services": [
+        {
+          "binding": "API",
+          "service": "sveltesse-turbo-api-dev"
+        }
+      ]
     },
     "prod": {
       "name": "sveltesse-turbo-prod",
