@@ -2,6 +2,9 @@
   import { onMount } from 'svelte';
 
   import { rpc } from '../libs/rpc';
+  import type { PageProps } from './$types';
+
+  let { data }: PageProps = $props();
 
   let text = $state<string>('');
 
@@ -22,3 +25,4 @@
 <h1>Web</h1>
 
 <p>text: {text}</p>
+<p>text from server: {data.message}</p>
