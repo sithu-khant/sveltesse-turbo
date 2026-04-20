@@ -1,11 +1,12 @@
 import type { ApiType } from '@repo/api-type';
 import { hc } from 'hono/client';
 
-export const rpc = hc<ApiType>('https://sveltesse-turbo-api-dev.sithukhant.workers.dev');
-// export const rpc = hc<ApiType>('http://localhost:8787');
+import { PUBLIC_API_URL } from '$env/static/public';
+
+export const rpc = hc<ApiType>(PUBLIC_API_URL);
 
 export async function createRpc(env: Env) {
-  return hc<ApiType>('https://sveltesse-turbo-api-dev.sithukhant.workers.dev', {
+  return hc<ApiType>(PUBLIC_API_URL, {
     fetch: env.API?.fetch.bind(env.API)
   });
 }
