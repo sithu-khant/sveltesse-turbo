@@ -11,7 +11,6 @@
 
   onMount(async () => {
     try {
-      console.log('Mounted...');
       const res = await rpc.index.$get();
       const { message } = await res.json();
 
@@ -25,5 +24,5 @@
 
 <h1>Web</h1>
 
-<p>text: {text}</p>
-<p>text from server: {data.message}</p>
+<p>Message from client: {text}</p>
+<p>Message from server: {data.message}</p>
