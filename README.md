@@ -56,6 +56,6 @@ packages/
 
 ---
 
-**🙏 Credits**
+**Credits**
 
-- Inspired by [Anthony Fu'vitesse-nuxt](https://github.com/antfu/vitesse-nuxt)
+- Inspired by [Anthony Fu's vitesse-nuxt](https://github.com/antfu/vitesse-nuxt)
