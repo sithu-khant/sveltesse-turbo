@@ -38,6 +38,7 @@
   } = $props();
 </script>
 
+<!-- svelte-ignore attribute_quoted -->
 <Button
   bind:ref
   {type}
