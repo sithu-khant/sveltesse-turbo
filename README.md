@@ -1,50 +1,61 @@
-# Turborepo Svelte starter
+# sveltesse-turbo
 
-This Turborepo starter is maintained by the Turborepo core team
-on [GitHub](https://github.com/vercel/turborepo/tree/main/examples/with-svelte/packages)
-.
+## Stack Overview
 
-## Using this example
+### 🌐 Web (Frontend)
 
-Run the following command:
+- SvelteKit — fast, modern, and flexible
+- Hono RPC — end-to-end type safety from API
+- Tailwind CSS — styling
+- shadcn-svelte — accessible UI components
+- Lucide — icons
 
-```sh
-npx create-turbo@latest -e with-svelte
+features:
+
+- ✅ SEO-ready
+- ✅ error handling
+- ✅ Strict TypeScript enforcement
+- ✅ Environment-based config
+- ✅ Cloudflare Workers ready
+
+### ⚡ API (Backend)
+
+- Hono — lightweight, fast, edge-ready
+- OpenAPI — standardized API schema
+- Scalar — beautiful API docs
+- Stoker — utilities for Hono + Zod OpenAPI
+
+you get:
+
+- 🔐 Type-safe routes
+- 📄 Auto-generated API docs
+- 🔄 Shared types with frontend
+- ⚡ Edge-compatible by default
+
+### 🛠️ Monorepo & Tooling
+
+- Turborepo — fast monorepo builds
+- 📦 Shared packages (e.g. API types)
+- 🔐 Shared TypeScript config
+- 🧹 ESLint pre-configured
+- 📁 Clean folder structure for scaling
+
+## 📁 Project Structure (Simplified)
+
+```md
+apps/
+  web/                   → SvelteKit frontend
+  api/                   → Hono backend
+
+packages/
+  api-type/              → shared api type between web & api
+  eslint-config/         → shared linting config
+  typescript-config/     → shared typescript config
+
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+**🙏 Credits**
 
-### Apps
-
-- `docs`: a [svelte-kit](https://kit.svelte.dev/) app
-- `web`: another [svelte-kit](https://kit.svelte.dev/) app
-
-### Packages
-
-#### `eslint-config`
-
-`eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
-
-#### `typescript-config`
-
-A package containing a custom `tsconfig` file.
-
-#### `ui`
-
-A stub Svelte component library shared by both `web` and `docs` applications. The package supports Svelte components and
-runes in `.svelte.ts` files, which are not supported in the svelte-kit generated tsconfig.
-
-Please refer to the [packaging](https://svelte.dev/docs/kit/packaging) page of the svelte documentation for additional
-information about svelte component libraries.
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Inspired by [Anthony Fu'vitesse-nuxt](https://github.com/antfu/vitesse-nuxt)
